@@ -1,16 +1,80 @@
-# React + Vite
+# DiigiiHost Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React landing page built with Vite and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20 or later
+- npm (included with Node.js)
 
-## React Compiler
+## Install and run
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+From the project folder, install the dependencies:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL printed in the terminal (normally `http://localhost:5173`).
+
+> On Windows, if PowerShell blocks `npm`, use `npm.cmd` instead:
+>
+> ```powershell
+> npm.cmd install
+> npm.cmd run dev
+> ```
+
+## Available commands
+
+```bash
+# Start the development server
+npm run dev
+
+# Create an optimized production build in /dist
+npm run build
+
+# Preview the production build locally
+npm run preview
+
+# Run ESLint
+npm run lint
+```
+
+## Tailwind CSS
+
+Tailwind CSS v4 is already installed and connected through the Vite plugin.
+
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+The configuration is in `vite.config.js`, and Tailwind is imported in `src/index.css`:
+
+```css
+@import 'tailwindcss';
+```
+
+## Project structure
+
+```text
+src/
+  assets/       Images and visual assets
+  components/   Reusable page sections
+  data/         Text and content data
+  App.jsx       Page composition
+  index.css     Global styles, fonts, and Tailwind import
+```
+
+## Notes
+
+- The page is component-based: each major section lives in `src/components` and is assembled in `src/App.jsx`.
+- Layouts use responsive Tailwind utilities, with the manifesto text switching to a stacked layout on narrower screens to prevent overlap with images.
+- Scroll-triggered animations use the browser `IntersectionObserver` API, avoiding an extra animation dependency.
+- The bundled Altone font files are trial files and may render watermark glyphs for certain characters. Where needed, a system-font fallback is used for those characters.
+- Alton and Kaushan Script are loaded from Google Fonts so their typography matches the intended design more closely.

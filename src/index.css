@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kaushan+Script&display=swap');
+@import 'tailwindcss';
+
+/*
+  Altone (Trial) — used for the hero headline and toolbar.
+  Font files live in /public/fonts/. Only Regular (400) and Bold (700)
+  weights exist, plus their obliques.
+*/
+@font-face {
+  font-family: 'Altone';
+  src: url('/fonts/Altone%20Trial-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Altone';
+  src: url('/fonts/Altone%20Trial-Oblique.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+/* Medium (500) */
+@font-face {
+  font-family: 'Altone';
+  src: url('/fonts/Altone%20Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Altone';
+  src: url('/fonts/Altone%20Trial-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Altone';
+  src: url('/fonts/Altone%20Trial-BoldOblique.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*
+  Design tokens for the Alkesh Gupta / DiigiiHost About page.
+  Colours & fonts are lifted from the Figma design. Tweak here
+  and every component updates.
+*/
+@theme {
+  /* Altone is the only typeface used across the page */
+  --font-sans: 'Altone', system-ui, sans-serif;
+  --font-serif: 'Altone', system-ui, sans-serif;
+  --font-altone: 'Altone', system-ui, sans-serif;
+  --font-anton: 'Anton', system-ui, sans-serif;
+
+  /* Brand greens */
+  --color-forest: #0c3b2e;
+  --color-forest-deep: #06231b;
+  --color-forest-soft: #14524a;
+  --color-teal: #1c6b5a;
+
+  /* Accents */
+  --color-gold: #c6a15b;
+  --color-gold-light: #e3c87e;
+
+  /* Neutrals */
+  --color-cream: #f4f3ee;
+  --color-ink: #0b0b0b;
+  --color-charcoal: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility: subtle reveal-on-load used by section wrappers */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom utility classes for specific design needs */
+.text-cream-fade-1 {
+  color: rgba(244, 243, 238, 0.9);
+}
+.text-cream-fade-2 {
+  color: rgba(244, 243, 238, 0.65);
+}
+.text-cream-fade-3 {
+  color: rgba(244, 243, 238, 0.4);
+}
+.text-cream-fade-4 {
+  color: rgba(244, 243, 238, 0.15);
+}
+
+.bg-brand-image {
+  background-image: url('/src/assets/alkesh-gupta.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
